@@ -72,7 +72,7 @@ Page({
         });
         //获取功能菜单权限列表
         my.httpRequest({
-          url: 'https://www.gdeiassistant.cn/rest/access/wechat',
+          url: 'https://www.gdeiassistant.cn/rest/access/miniapp',
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
