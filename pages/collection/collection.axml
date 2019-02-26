@@ -1,0 +1,57 @@
+<block>
+  <view class="page__bd">
+    <view class="container">
+      <block a:if="{{errorMessage}}">
+        <view class="weui-toptips weui-toptips_warn">{{errorMessage}}                
+        </view>
+      </block>
+      <block a:if="{{list.length == 0}}">
+        <view block="{{true}}" class="container">
+          <form onSubmit="formSubmit" style="margin-top:15px">
+            <view class="page-section">
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                  <view class="weui-cell__hd">
+                    <view class="weui-label">书名                                        
+                    </view>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input name="bookname" class="weui-input" maxlength="50" type="text" placeholder="请输入图书信息" />
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="weui-btn-area">
+              <button class="weui-btn" disabled="{{loading}}" type="primary" form-type="submit">查询                            
+              </button>
+            </view>
+          </form>
+        </view>
+      </block>
+    </view>
+    <block a:if="{{list.length != 0}}">
+      <view block="{{true}}" class="container">
+        <view class="weui-cells__title">查询结果                
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <block a:for="{{list}}" a:for-item="i" a:for-index="index">
+            <navigator url="{{'../collectionDetail/collectionDetail?bookname=' + i.bookname + '&' + i.detailURL}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">{{i.bookname}}                            
+              </view>
+              <view class="weui-cell__ft weui-cell__ft_in-access">
+              </view>
+            </navigator>
+          </block>
+        </view>
+        <block a:if="{{currentPage < sumPage}}">
+          <text class="loadmore" onTap="loadMore">点击加载更多信息                    
+          </text>
+        </block>
+        <block a:if="{{currentPage >= sumPage}}">
+          <text disable="true" class="loadmore">没有更多图书信息                    
+          </text>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calendar": "mini-antui/es/calendar/index"
+  },
+  "defaultTitle": "消费查询"
+}

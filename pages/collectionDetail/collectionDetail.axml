@@ -1,0 +1,172 @@
+<block>
+  <view block="{{true}}" class="page__bd">
+    <block a:if="{{errorMessage}}">
+      <view class="weui-toptips weui-toptips_warn">{{errorMessage}}
+      </view>
+    </block>
+    <block a:if="{{result}}">
+      <view class="container">
+        <view class="weui-cells__title">基本信息
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <block a:if="{{result.bookname && result.bookname.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">书名
+              </view>
+              <view class="weui-cell__ft">{{result.bookname}}
+              </view>
+            </view>
+          </block>
+          <block a:if="{{result.author && result.author.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">作者
+              </view>
+              <view class="weui-cell__ft">{{result.author}}
+              </view>
+            </view>
+          </block>
+          <block a:if="{{anonymousState__temp}}">
+            <block>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">题名
+                </view>
+                <view class="weui-cell__ft">{{result.autograph}}
+                </view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">负责者
+                </view>
+                <view class="weui-cell__ft">{{result.director}}
+                </view>
+              </view>
+            </block>
+          </block>
+          <block a:if="{{anonymousState__temp2}}">
+            <view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">题名/负责者
+                </view>
+                <view class="weui-cell__ft">{{result.principal}}
+                </view>
+              </view>
+            </view>
+          </block>
+          <block a:if="{{anonymousState__temp3}}">
+            <block>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">出版社
+                </view>
+                <view class="weui-cell__ft">{{result.house}}
+                </view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">出版年
+                </view>
+                <view class="weui-cell__ft">{{result.year}}
+                </view>
+              </view>
+            </block>
+          </block>
+          <block a:if="{{anonymousState__temp4}}">
+            <view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">出版社/出版年
+                </view>
+                <view class="weui-cell__ft">{{result.publishingHouse}}
+                </view>
+              </view>
+            </view>
+          </block>
+          <block a:if="{{anonymousState__temp5}}">
+            <block>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">ISBN
+                </view>
+                <view class="weui-cell__ft">{{result.ISBN}}
+                </view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">定价
+                </view>
+                <view class="weui-cell__ft">{{result.priceValue}}
+                </view>
+              </view>
+            </block>
+          </block>
+          <block a:if="{{anonymousState__temp6}}">
+            <view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">ISBN/定价
+                </view>
+                <view class="weui-cell__ft">{{result.price}}
+                </view>
+              </view>
+            </view>
+          </block>
+          <block a:if="{{result.physicalDescriptionArea && result.physicalDescriptionArea.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">载体形态项
+              </view>
+              <view class="weui-cell__ft">{{result.physicalDescriptionArea}}
+              </view>
+            </view>
+          </block>
+          <block a:if="{{result.personalPrincipal && result.personalPrincipal.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">个人责任者
+              </view>
+              <view class="weui-cell__ft">{{result.personalPrincipal}}
+              </view>
+            </view>
+          </block>
+          <block a:if="{{result.subjectTheme && result.subjectTheme.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">学科主题
+              </view>
+              <view class="weui-cell__ft">{{result.subjectTheme}}
+              </view>
+            </view>
+          </block>
+          <block a:if="{{result.chineseLibraryClassification && result.chineseLibraryClassification.length != 0}}">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">中图法分类号
+              </view>
+              <view class="weui-cell__ft">{{result.chineseLibraryClassification}}
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-cells__title">馆藏信息
+        </view>
+        <view block="{{true}}" a:for="{{result.collectionDistributionList}}" a:for-item="i" a:for-index="index">
+          <view style="margin-bottom:25rpx" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">馆藏地
+              </view>
+              <view class="weui-cell__ft">{{i.location}}
+              </view>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">索取号
+              </view>
+              <view class="weui-cell__ft">{{i.callNumber}}
+              </view>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">条码号
+              </view>
+              <view class="weui-cell__ft">{{i.barcode}}
+              </view>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">状态
+              </view>
+              <view class="weui-cell__ft">{{i.state}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

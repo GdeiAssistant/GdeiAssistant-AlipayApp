@@ -1,0 +1,77 @@
+<block>
+    <view class="container">
+        <view class="userinfo">
+            <block a:if="{{avatar}}">
+                <block>
+                    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image><text class="userinfo-nickname">{{kickname}}</text>
+                </block>
+            </block>
+        </view>
+        <view class="page-body">
+            <view class="page__bd">
+                <view class="weui-grids">
+                    <block a:if="{{access.grade}}">
+                        <navigator open-type="navigate" url="../grade/grade" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/grade.png"></image>
+                            <view class="weui-grid__label">期末成绩</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.schedule}}">
+                        <navigator open-type="navigate" url="../schedule/schedule" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/schedule.png"></image>
+                            <view class="weui-grid__label">我的课表</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.cet}}">
+                        <navigator open-type="navigate" url="../cet/cet" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/cet.png"></image>
+                            <view class="weui-grid__label">四六级查询</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.bill}}">
+                        <navigator open-type="navigate" url="../bill/bill" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/bill.png"></image>
+                            <view class="weui-grid__label">消费查询</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.card}}">
+                        <navigator open-type="navigate" url="../card/card" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/card.png"></image>
+                            <view class="weui-grid__label">我的校园卡</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.lost}}">
+                        <navigator open-type="navigate" url="../cardLost/cardLost" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/cardLost.png"></image>
+                            <view class="weui-grid__label">校园卡挂失</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.charge}}">
+                        <navigator open-type="navigate" url="../charge/charge" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/charge.png"></image>
+                            <view class="weui-grid__label">校园卡充值</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.evaluate}}">
+                        <navigator open-type="navigate" url="../evaluate/evaluate" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/evaluate.png"></image>
+                            <view class="weui-grid__label">一键评教</view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{access.collection}}">
+                        <navigator open-type="navigate" url="../collection/collection" class="weui-grid" hover-class="weui-grid_active">
+                            <image class="weui-grid__icon" src="/image/collection.png"></image>
+                            <view class="weui-grid__label">馆藏查询</view>
+                        </navigator>
+                    </block>
+                    <view onTap="logout" class="weui-grid" hover-class="weui-grid_active">
+                        <image class="weui-grid__icon" src="/image/exit.png"></image>
+                        <view class="weui-grid__label">退出账号</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="copyright_info"><text>Copyright © 2016 - 2019 GdeiAssistant\n</text><text>All rights reserved</text>
+        </view>
+    </view>
+</block>

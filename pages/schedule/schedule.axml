@@ -1,0 +1,44 @@
+<block>
+  <view class="page__bd">
+    <view class="weui-navbar">
+      <block a:for="{{tabs}}" a:for-item="item" a:for-index="index">
+        <view id="{{index}}" class="{{'weui-navbar__item ' + (activeIndex == index ? 'weui-bar__item_on' : '')}}" onTap="tabClick">
+          <view class="weui-navbar__title">{{item}}                    
+          </view>
+        </view>
+      </block>
+    </view>
+    <block a:if="{{week}}">
+      <view block="{{true}}">
+        <view class="weui-btn-area">
+          <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <button type="default">{{'当前查询的周数：第' + week + '周'}}                        
+            </button>
+          </picker>
+        </view>
+      </view>
+    </block>
+    <block a:if="{{scheduleList}}">
+      <view class="weui-tab__panel" block="{{true}}">
+        <view class="weui-tab__content" hidden="{{activeIndex != k}}" a:for="{{tabs}}" a:for-item="item" a:for-index="k">
+          <block a:for="{{scheduleList[k]}}" a:for-item="i" a:for-index="index">
+            <view class="weui-media-box weui-media-box_text">
+              <view style="font-size:13px" class="weui-media-box__title weui-media-box__title_in-text">{{i.scheduleLesson}}                            
+              </view>
+              <view class="weui-media-box__info">
+                <block>
+                  <text class="weui-media-box__bold" style="font-size:15px">{{i.scheduleName + '\\n'}}                                    
+                  </text>
+                  <text style="float:left">{{"第" + i.minScheduleWeek +"周至第" + i.maxScheduleWeek + "周" + '\\n' + i.scheduleTeacher}}                                    
+                  </text>
+                  <text style="float:right">{{i.scheduleLocation}}                                    
+                  </text>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

@@ -1,0 +1,31 @@
+<block>
+    <block>
+        <view class="weui-navbar">
+            <block a:for="{{tabs}}" a:for-item="item" a:for-index="index">
+                <view id="{{index}}" class="{{'weui-navbar__item ' + (activeIndex == index ? 'weui-bar__item_on' : '')}}" onTap="tabClick">
+                    <view class="weui-navbar__title">{{item}}</view>
+                </view>
+            </block>
+        </view>
+        <view class="container">
+            <block a:if="{{firstTermGradeList && secondTermGradeList}}">
+                <view block="true" class="page__bd">
+                    <view class="weui-cells__title">第一学期</view>
+                    <view class="weui-cells weui-cells_after-title">
+                        <view class="weui-cell" a:for="{{firstTermGradeList}}" a:for-item="item" a:for-index="index">
+                            <view class="weui-cell__bd">{{item.gradeName}}</view>
+                            <view class="weui-cell__ft">{{item.gradeScore}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-cells__title">第二学期</view>
+                    <view class="weui-cells weui-cells_after-title">
+                        <view class="weui-cell" a:for="{{secondTermGradeList}}" a:for-item="item" a:for-index="index">
+                            <view class="weui-cell__bd">{{item.gradeName}}</view>
+                            <view class="weui-cell__ft">{{item.gradeScore}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</block>
