@@ -96,11 +96,11 @@ Page({
                 }
               });
             } else {
-              utils.showNoActionModal('获取功能菜单失败', result.data.message);
+              utils.showAlertModal('获取功能菜单失败', result.data.message);
             }
           },
           fail: function () {
-            utils.showNoActionModal('网络异常', '请检查网络连接');
+            utils.showAlertModal('网络异常', '请检查网络连接');
           }
         });
       }

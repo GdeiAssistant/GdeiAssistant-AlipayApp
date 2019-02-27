@@ -66,6 +66,7 @@ Page({
     } else {
       //加载用户唯一标识ID
       my.getAuthCode({
+        scopes: 'auth_base',
         success: (res) => {
           if (res.authCode) {
             my.httpRequest({
@@ -153,7 +154,7 @@ Page({
         }
       });
     } else {
-      utils.showNoActionModal('请填写教务系统信息', '教务系统账号和密码不能为空');
+      utils.showAlertModal('请填写教务系统信息', '教务系统账号和密码不能为空');
     }
   }
 });
