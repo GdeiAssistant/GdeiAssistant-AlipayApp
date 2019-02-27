@@ -34,7 +34,6 @@ Page({
     var page = this;
     if (this.data.date) {
       var days = utils.calculateDateDifference(this.data.date);
-      console.log(days);
       if (days <= 0 && days >= -365) {
         my.showNavigationBarLoading();
         this.setData({
