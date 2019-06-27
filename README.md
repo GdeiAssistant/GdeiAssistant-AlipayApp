@@ -2,7 +2,7 @@
   <img width="300" src="./github/logo.png">
 </p>
 
-# 广东二师助手微信小程序
+# 广东二师助手支付宝小程序
 
 **广东第二师范学院校园助手系统支付宝小程序客户端**，由多端统一开发框架Taro和支付宝小程序开发者工具经转编译和少量修改实现。小程序利用蚂蚁金服开放平台提供的API接口和框架组件，简单实现了校园查询基础服务。UI页面设计遵循支付宝小程序的设计规范，且引入了基于小程序自定义组件规范开发的开源UI组件库——小程序拓展组件，提供了更为丰富的用户交互效果和更为优秀的用户体验。应用的后端API数据接口由广东第二师范学院校园助手系统提供。
 
@@ -16,6 +16,7 @@
 - 馆藏查询
 - 校园卡查询
 - 校园卡挂失
+- 校园卡充值
 
 ## 预览
 
@@ -49,7 +50,7 @@ $ git clone https://github.com/GdeiAssistant/GdeiAssistant-AlipayApp.git
 
 ## 数据接口
 
-广东二师助手微信小程序的后端API数据接口由[广东第二师范学院校园助手系统](https://github.com/GdeiAssistant/GdeiAssistant)提供
+广东二师助手支付宝小程序的后端API数据接口由[广东第二师范学院校园助手系统](https://github.com/GdeiAssistant/GdeiAssistant)提供
 
 数据接口API文档说明请查阅[广东第二师范学院校园助手系统数据接口API文档](https://github.com/GdeiAssistant/GdeiAssistant/wiki)
 
