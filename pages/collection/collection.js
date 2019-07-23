@@ -7,9 +7,10 @@ Page({
     currentPage: 0,
     sumPage: 0,
     hasMore: false,
-    loading: false
+    loading: false,
+    errorMessage: null
   },
-  showTopTips() {
+  showTopTips(content) {
     var that = this;
     this.setData({
       errorMessage: content
