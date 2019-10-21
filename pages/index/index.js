@@ -3,7 +3,7 @@ import utils from '/utils/utils.js';
 Page({
   data: {
     avatar: null,
-    kickname: null,
+    nickname: null,
     access: {
       grade: null,
       schedule: null,
@@ -54,19 +54,19 @@ Page({
             token: accessToken.signature
           },
           success: function (result) {
-            if (result.data.success && result.data.data && result.data.data.kickname) {
+            if (result.data.success && result.data.data && result.data.data.nickname) {
               page.setData({
-                kickname: result.data.data.kickname
+                nickname: result.data.data.nickname
               });
             } else {
               page.setData({
-                kickname: '易小助用户'
+                nickname: '易小助用户'
               });
             }
           },
           fail: function () {
             page.setData({
-              kickname: '易小助用户'
+              nickname: '易小助用户'
             });
           }
         });

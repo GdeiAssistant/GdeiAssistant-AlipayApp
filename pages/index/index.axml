@@ -3,7 +3,7 @@
         <view class="userinfo">
             <block a:if="{{avatar}}">
                 <block>
-                    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image><text class="userinfo-nickname">{{kickname}}</text>
+                    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image><text class="userinfo-nickname">{{nickname}}</text>
                 </block>
             </block>
         </view>
